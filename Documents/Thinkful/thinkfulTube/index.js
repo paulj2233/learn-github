@@ -50,7 +50,7 @@ function renderResults (result) {
 	let thumbNail = result.snippet.thumbnails.medium.url;
 	let title = result.snippet.title;
 	return `<div>
-		<img src= ${thumbNail} ><a href= ${href}>click this video ${title}</a>
+		<img src= ${thumbNail} alt=${title} ><a href= ${href}>click this video ${title}</a>
 			</div>`;
 }
 
@@ -58,7 +58,7 @@ function renderResults (result) {
 function displayResults (data) {
 	console.log(data);
 	 const display = data.items.map((item, index) => renderResults(item));
-	 
+
 	$(".js-search-results").html(display);
 }
 
